@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+@font-face {
+  font-family: Norse-Bold;
+  src: url(../fonts/Norse-Bold.otf);
+}
+.container {
+  height: 100vh;
+  display: flex;
+  background-color: #f9fafb;
+}
+
+.img-side {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background: url(../images/form-image.jpg) center/cover;
+  position: relative;
+  width: 25%;
+  padding: 15px;
+  color: white;
+  font-size: 15px;
+}
+.img-side a {
+  color: white;
+  margin: 0 6px;
+}
+.img-side .logo {
+  position: absolute;
+  background-color: rgb(0 0 0 / 50%);
+  width: 100%;
+  left: 0;
+  top: 22vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  z-index: 3;
+  color: white;
+  font-family: Norse-Bold;
+  font-size: 5rem;
+}
+.img-side .logo img {
+  width: 80px;
+}
+.form-side {
+  width: 75%;
+  display: flex;
+  align-items: center;
+}
+
+.form-side .form-container > p {
+  font-weight: bold;
+  font-size: 23px;
+  padding: 0 40px 30px;
+}
+
+.form-side .form-container form .inputs-box {
+  background-color: white;
+  width: 75vw;
+  padding: 30px 40px;
+  margin: 30px 0 35px;
+  box-shadow: 3px 5px 5px rgb(0 0 0 / 11%);
+  display: flex;
+  flex-wrap: wrap;
+}
+.form-side .form-container form .inputs-box p {
+  width: 100%;
+  font-size: 23px;
+  font-weight: bold;
+  color: #333;
+}
+.form-side .form-container form .inputs-box > div {
+  width: 35%;
+  margin-top: 25px;
+}
+.form-side .form-container form .inputs-box > div label {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #424242;
+  margin-bottom: 3px;
+}
+.form-side .form-container form .inputs-box > div input {
+  width: 300px;
+  padding: 6px 10px;
+  font-size: 18px;
+  background: none;
+  outline: none;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+}
+.form-side .form-container form .inputs-box > div input:focus {
+  background: none;
+  border-color: blue;
+  box-shadow: 3px 5px 5px rgb(0 0 0 / 11%);
+}
+.form-side .form-container form .inputs-box > div input:invalid {
+  border-color: red;
+}
+.form-side .form-container form button {
+  width: 250px;
+  padding: 15px;
+  background-color: #596d48;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  margin-left: 40px;
+  margin-bottom: 35px;
+  cursor: pointer;
+  box-shadow: 3px 5px 5px rgb(0 0 0 / 11%);
+}
+.form-side .form-container form > p {
+  margin-left: 40px;
+  font-size: 18px;
+}
+.form-side .form-container form > p a {
+  color: #596d48;
+  text-decoration: none;
+  font-weight: bold;
+}
