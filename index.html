@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <h1>Tic Tac Toe Game</h1>
+    <div class="game">
+      <div class="header">
+        <h3>Choose Game Mode If You Want</h3>
+        <select id="game-mode">
+          <option class="option" value="pc">Play Against Computer</option>
+          <option class="option" value="human">Play Against A Friend</option>
+        </select>
+        <button class="player choosen">
+          <span class="name">x</span>
+          <span class="score">-</span>
+        </button>
+        <button class="player">
+          <span class="name">o</span>
+          <span class="score">-</span>
+        </button>
+        <div class="game-summary">Start Game Or Select Player</div>
+      </div>
+      <div class="game-cards">
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="winner x-winner">
+          <div class="x-shape"></div>
+          Winner!
+        </div>
+        <div class="winner o-winner">
+          <div class="o-shape"></div>
+          Winner!
+        </div>
+        <div class="winner draw">
+          <div class="x-shape"></div>
+          <div class="o-shape"></div>
+          Draw!
+        </div>
+      </div>
+      <div class="footer">
+        <button class="restart">Restart Game</button>
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>
