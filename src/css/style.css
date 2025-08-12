@@ -1,0 +1,234 @@
+:root {
+  --primary-color: #009688;
+  --main-size: 15px;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* Start Special Classes */
+
+.overlay::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(0 0 0 / 76%);
+  z-index: -1;
+}
+
+.custom-sittings {
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  padding-top: 80px;
+  color: white;
+}
+
+/* End Special Classes */
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: var(--main-size);
+  padding: 10px 0;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+nav button {
+  width: 130px;
+  padding: 10px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: transparent;
+  color: #989898;
+  border: 3px solid var(--primary-color);
+  border-radius: 6px;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  transition: 0.3s;
+}
+
+nav button::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: var(--primary-color);
+  z-index: -1;
+  transition: 0.3s;
+}
+
+nav button.active,
+nav button:hover {
+  color: white;
+}
+
+nav button.active::before,
+nav button:hover::before {
+  width: 100%;
+}
+
+.home-page {
+  background: url(https://bit.ly/40VTfoj) center / cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-page .intro-text {
+  width: 880px;
+  text-align: center;
+}
+.home-page .intro-text h1 {
+  font-size: 34px;
+  margin-bottom: var(--main-size);
+}
+.home-page .intro-text p {
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+.menu-page {
+  background: url(https://bit.ly/47nbO8I) center/cover;
+}
+
+.menu-page h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-top: 30px;
+}
+
+.menu-page .shuffle {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 10px;
+  margin: 50px 0;
+}
+.menu-page .shuffle li {
+  width: 135px;
+  text-align: center;
+  background-color: var(--primary-color);
+  padding: 10px 0;
+  font-weight: bold;
+  border: 3px solid transparent;
+  border-radius: 6px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.menu-page .shuffle li.active,
+.menu-page .shuffle li:hover {
+  background-color: transparent;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.menu-page .menu-content {
+  padding: 0 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 25px;
+}
+
+.menu-page .menu-content .all-recipes {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.menu-page .menu-content .all-recipes img {
+  width: 100%;
+  height: 232px;
+}
+
+.menu-page .menu-content .all-recipes h4 {
+  color: black;
+  text-align: center;
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+.menu-page .menu-content .all-recipes .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--main-size);
+}
+
+.menu-page .menu-content .all-recipes .price,
+.menu-page .menu-content .all-recipes .category {
+  padding: 8px var(--main-size);
+  background-color: #eee;
+  border-radius: 20px;
+  font-weight: bold;
+}
+.menu-page .menu-content .all-recipes .price {
+  color: black;
+}
+
+.menu-page .menu-content .all-recipes a {
+  color: white;
+  text-decoration: none;
+  background-color: var(--primary-color);
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  border: 3px solid transparent;
+  transition: 0.3s;
+}
+
+.menu-page .menu-content .all-recipes a:hover {
+  background-color: transparent;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.menu-page .menu-content .all-recipes .category {
+  color: var(--primary-color);
+}
+
+.about-page {
+  background: url(https://tinyurl.com/4pw97v72) center / cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-page .content {
+  width: 650px;
+}
+.about-page h2 {
+  font-size: 30px;
+}
+.about-page p {
+  font-size: 17px;
+  line-height: 1.5;
+  padding: var(--main-size) 0;
+  margin: var(--main-size) 0;
+  border-top: 1px solid #767676;
+}
+.about-page p:not(:last-of-type) {
+  border-bottom: 1px solid #767676;
+}
+.about-page ul {
+  padding-left: 16px;
+  margin-top: var(--main-size);
+}
+.about-page ul li {
+  padding: 0 10px;
+  font-size: 17px;
+  line-height: 2.3;
+}
