@@ -1,0 +1,436 @@
+:root {
+  --primary-color: #f44336;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+dialog {
+  left: 50%;
+  top: -100%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fcfaf8;
+  border-color: var(--primary-color);
+  border-radius: 8px;
+  transition: 0.5s;
+}
+dialog.show {
+  top: 50%;
+}
+dialog form {
+  width: 450px;
+}
+dialog .id {
+  display: none;
+}
+dialog form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+dialog form label span {
+  color: red;
+  font-size: 20px;
+  position: relative;
+  top: 3px;
+}
+dialog form input,
+dialog form select,
+dialog form textarea {
+  padding: 7px 15px;
+  font-size: 18px;
+  width: 100%;
+  border: 2px solid #ffcdd2;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+dialog form textarea {
+  font-size: 20px;
+  height: 90px;
+  resize: none;
+}
+dialog form input:focus,
+dialog form select:focus,
+dialog form textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+dialog form div:last-of-type {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+dialog form button {
+  flex: 1;
+  padding: 10px 0;
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: 1px;
+  border: 3px solid transparent;
+  border-radius: 6px;
+  outline: none;
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+dialog form button:hover {
+  background: transparent;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+dialog form button:first-of-type {
+  background-color: #9c27b0;
+}
+
+dialog form button:first-of-type:hover {
+  background: transparent;
+  border-color: #9c27b0;
+  color: #9c27b0;
+}
+
+.app {
+  display: flex;
+}
+.sidebar-container {
+  min-height: 100vh;
+  width: 300px;
+  position: relative;
+  transition: 0.5s;
+}
+
+.sidebar-container.show {
+  width: 0;
+}
+.sidebar {
+  position: fixed;
+  padding: 15px;
+  background-color: #fcfaf8;
+  width: 300px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: 0.5s;
+  z-index: 1000;
+}
+.sidebar-container.show .sidebar {
+  left: -300px;
+}
+.sidebar .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.sidebar .header h3 {
+  font-size: 25px;
+  letter-spacing: 2px;
+  color: var(--primary-color);
+}
+.sidebar .header button {
+  border: 0;
+  cursor: pointer;
+  padding: 0 10px;
+  background: none;
+  position: absolute;
+  right: 0;
+  transition: 0.5s;
+}
+
+.sidebar-container.show .sidebar .header button {
+  right: -65px;
+}
+
+.sidebar svg {
+  width: 25px;
+  fill: #5b5b5b;
+}
+.sidebar .box {
+  padding: 8px 0;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 5px;
+  color: #5b5b5b;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.sidebar .box:not(.active):hover {
+  background-color: #f2efed;
+}
+
+.sidebar .box:hover button {
+  opacity: 1;
+}
+
+.sidebar .box.active {
+  background-color: #ffebee;
+  color: var(--primary-color);
+}
+
+.sidebar .box.active svg {
+  fill: var(--primary-color);
+}
+
+.sidebar .box button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.3s;
+}
+.sidebar .box button:hover {
+  background-color: #dfdfdf;
+}
+.sidebar .add-project,
+.sidebar .add-task {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.sidebar .add-project:not(button) svg,
+.sidebar .add-task svg {
+  width: 28px;
+  fill: var(--primary-color);
+}
+
+.sidebar .my-projects {
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 5px;
+}
+
+.sidebar .my-projects .info button svg,
+.sidebar .projects-list .project-item button svg {
+  width: 20px;
+}
+.sidebar .projects-list {
+  min-height: 96px;
+  transition: 0.3s;
+}
+
+.sidebar .projects-list.hide {
+  height: 0;
+  min-height: 0;
+}
+
+.sidebar .projects-list .project-item {
+  padding: 5px 5px 5px 15px;
+  position: relative;
+}
+
+.sidebar .project-item button {
+  margin-left: auto;
+}
+.sidebar .project-item button:focus {
+  opacity: 1;
+  background-color: #dfdfdf;
+}
+
+.sidebar .projects-list .project-item .details {
+  position: absolute;
+  opacity: 1;
+  width: 120px;
+  background-color: white;
+  height: 75px;
+  padding: 5px;
+  border: 1px solid #ffcdd2;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -135px;
+  display: none;
+}
+.sidebar .projects-list .project-item .details.show {
+  display: block;
+}
+.sidebar .projects-list .project-item .details button {
+  opacity: 1;
+  display: flex;
+  margin: 0;
+  align-items: center;
+  gap: 20px;
+  font-size: 18px;
+  color: #5b5b5b;
+  width: 100%;
+}
+.sidebar .projects-list .project-item .details button:last-of-type {
+  color: var(--primary-color);
+}
+.sidebar .projects-list .project-item .details button:last-of-type svg {
+  fill: var(--primary-color);
+}
+.sidebar .project-item svg {
+  width: 20px;
+  fill: #878787;
+}
+
+.content {
+  flex: 1;
+}
+.content .main-content {
+  width: 950px;
+  margin: 50px auto 0;
+}
+
+.main-content h2 {
+  font-size: 35px;
+}
+
+.main-content .empty-msg {
+  margin: 20px auto;
+  text-align: center;
+  font-size: 25px;
+}
+
+.main-content .task-item {
+  padding: 15px 15px 15px 35px;
+  border-bottom: 2px solid #eee;
+  position: relative;
+}
+
+.main-content .task-item h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 28px;
+}
+.main-content .task-item span {
+  position: absolute;
+  left: 0;
+  top: 20px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.main-content .task-item span:hover {
+  background-color: #ffebee;
+}
+.main-content .task-item .task-done.done {
+  background-color: #ef9a9a;
+}
+.main-content .task-item h3 button {
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  background: none;
+  transition: 0.3s;
+}
+.main-content .task-item h3 button:hover {
+  background-color: #dfdfdf;
+}
+.main-content .task-item h3 button.hide {
+  display: none;
+}
+.main-content .task-item svg {
+  width: 25px;
+}
+.main-content .task-item p {
+  margin: 10px 0;
+  color: #6d6d6d;
+  font-size: 18px;
+}
+.main-content .task-item .task-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.main-content .task-item .date {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 18px;
+}
+.main-content .task-item .priority {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: var(--primary-color);
+}
+
+.main-content .task-item .priority svg {
+  fill: var(--primary-color);
+}
+
+.content .main-content .add-task {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  border: none;
+  padding: 5px 0;
+  width: 100%;
+  font-size: 18px;
+  background: none;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+.content .main-content .add-task.hide {
+  display: none;
+}
+.content .main-content .add-task svg {
+  width: 22px;
+  fill: var(--primary-color);
+}
+
+.main-content .delete-box {
+  margin: 15px 0;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+.main-content .delete-box input {
+  flex: 1;
+  padding: 10px;
+  font-size: 18px;
+  border: 2px solid #ffcdd2;
+  border-radius: 5px;
+  outline: none;
+  transition: 0.3s;
+}
+.main-content .delete-box input:focus {
+  border-color: var(--primary-color);
+}
+.main-content .delete-box button {
+  width: 200px;
+  font-size: 18px;
+  border: 3px solid transparent;
+  border-radius: 5px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.main-content .delete-box .delete-one {
+  background-color: #009688;
+}
+.main-content .delete-box .delete-one:hover {
+  background-color: transparent;
+  color: #009688;
+  border-color: #009688;
+}
+.main-content .delete-box .delete-all {
+  background-color: var(--primary-color);
+}
+.main-content .delete-box .delete-all:hover {
+  background-color: transparent;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
