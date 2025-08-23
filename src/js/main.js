@@ -13,9 +13,10 @@ const allAppFunctions = (() => {
       { mode: "cors" }
     );
     const respondData = await respond.json();
-
+    let newData = {};
+    extractUsingData(newData, respondData);
     displayBox.innerHTML = "";
-    displayAppContent(respondData);
+    displayAppContent(newData);
 
     tempSwitchBtn.forEach((btn) => {
       btn.addEventListener("click", () => {
@@ -24,6 +25,28 @@ const allAppFunctions = (() => {
         switchTempUnits(respondData.days);
       });
     });
+  };
+
+  const extractUsingData = (newData, oldData) => {
+    newData.address = oldData.address;
+    newData.days = [];
+    let oldDays = oldData.days;
+    for (let i = 0; i < 7; i++) {
+      let obj = {};
+      obj.datetime = oldDays[i].datetime;
+      obj.temp = oldDays[i].temp;
+      obj.icon = oldDays[i].icon;
+      if (i === 0) {
+        obj.conditions = oldDays[i].conditions;
+        obj.dew = oldDays[i].dew;
+        obj.humidity = oldDays[i].humidity;
+        obj.windspeed = oldDays[i].windspeed;
+        obj.pressure = oldDays[i].pressure;
+        obj.sunrise = oldDays[i].sunrise;
+        obj.sunset = oldDays[i].sunset;
+      }
+      newData.days.push(obj);
+    }
   };
 
   const displayAppContent = (data) => {
@@ -94,30 +117,6 @@ const allAppFunctions = (() => {
     switchTempUnits(days);
   };
 
-  const switchTempUnits = (days) => {
-    let dewValue = document.querySelector(".dew .value");
-    let daysTemp = document.querySelectorAll(".app-display .day-temp");
-    tempSwitchBtn.forEach((btn) => {
-      if (btn.classList.contains("active")) {
-        if (btn.dataset.unit === "C") {
-          dewValue.innerHTML = `${(((days[0].dew - 32) * 5) / 9).toFixed(
-            1
-          )} °C`;
-          daysTemp.forEach((day, index) => {
-            day.innerHTML = `${(((days[index].temp - 32) * 5) / 9).toFixed(
-              1
-            )} °C`;
-          });
-        } else {
-          dewValue.innerHTML = `${days[0].dew} °F`;
-          daysTemp.forEach((day, index) => {
-            day.innerHTML = `${days[index].temp} °F`;
-          });
-        }
-      }
-    });
-  };
-
   const createElement = (
     type,
     container,
@@ -145,6 +144,30 @@ const allAppFunctions = (() => {
       img.width = size;
       container.prepend(img);
     };
+  };
+
+  const switchTempUnits = (days) => {
+    let dewValue = document.querySelector(".dew .value");
+    let daysTemp = document.querySelectorAll(".app-display .day-temp");
+    tempSwitchBtn.forEach((btn) => {
+      if (btn.classList.contains("active")) {
+        if (btn.dataset.unit === "C") {
+          dewValue.innerHTML = `${(((days[0].dew - 32) * 5) / 9).toFixed(
+            1
+          )} °C`;
+          daysTemp.forEach((day, index) => {
+            day.innerHTML = `${(((days[index].temp - 32) * 5) / 9).toFixed(
+              1
+            )} °C`;
+          });
+        } else {
+          dewValue.innerHTML = `${days[0].dew} °F`;
+          daysTemp.forEach((day, index) => {
+            day.innerHTML = `${days[index].temp} °F`;
+          });
+        }
+      }
+    });
   };
 
   return { getLocationTemp };
