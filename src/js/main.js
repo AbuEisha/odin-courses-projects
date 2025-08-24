@@ -13,16 +13,18 @@ const allAppFunctions = (() => {
       { mode: "cors" }
     );
     const respondData = await respond.json();
-    let newData = {};
-    extractUsingData(newData, respondData);
+    let usingData = {};
+
+    extractUsingData(usingData, respondData);
+
     displayBox.innerHTML = "";
-    displayAppContent(newData);
+    displayAppContent(usingData);
 
     tempSwitchBtn.forEach((btn) => {
       btn.addEventListener("click", () => {
         tempSwitchBtn.forEach((btn) => btn.classList.remove("active"));
         btn.classList.add("active");
-        switchTempUnits(respondData.days);
+        switchTempUnits(usingData.days);
       });
     });
   };
@@ -47,6 +49,7 @@ const allAppFunctions = (() => {
       }
       newData.days.push(obj);
     }
+    return newData;
   };
 
   const displayAppContent = (data) => {
@@ -102,7 +105,7 @@ const allAppFunctions = (() => {
     createElement("div", displayBox, "", "class", "days-details");
     let daysDetails = document.querySelector(".app-display .days-details");
 
-    for (let i = 1; i < 7; i++) {
+    for (let i = 1; i < days.length; i++) {
       createElement("div", daysDetails, "", "id", `day-${i + 1}`);
       let daysBox = document.getElementById(`day-${i + 1}`);
       createImg(days[i].icon, daysBox, 64);
