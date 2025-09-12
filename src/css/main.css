@@ -1,0 +1,153 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background: #eef2f3;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: 50px;
+}
+
+#controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 8px 15px;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+#rotate-btn {
+  background: #009688;
+}
+
+#reset-btn {
+  background: #e74c3c;
+}
+
+#start-btn {
+  background: #9c27b0;
+}
+
+#placement-phase {
+  width: 750px;
+  margin: auto;
+}
+
+#ship-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.draggable {
+  padding: 6px 10px;
+  border-radius: 4px;
+  background: #3498db;
+  color: #fff;
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.2s;
+}
+.draggable:active {
+  opacity: 0.7;
+}
+
+.boards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.board {
+  background: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(10, 30px);
+  grid-template-rows: repeat(10, 30px);
+  gap: 2px;
+  margin: 30px auto;
+}
+
+.cell {
+  width: 30px;
+  height: 30px;
+  background: #b0c4de;
+  position: relative;
+  transition: background-color 0.2s;
+}
+
+.cell.hover {
+  background-color: rgba(46, 204, 113, 0.7);
+}
+
+.cell.ship {
+  background: #2c3e50;
+}
+
+.cell.hit {
+  background: #e74c3c;
+  animation: pulse 0.4s ease-out;
+}
+
+.cell.miss {
+  background: #ecf0f1;
+}
+
+.cell.ship {
+  background: #2c3e50;
+}
+
+.cell.hit {
+  background: #e74c3c;
+  animation: pulse 0.4s ease-out;
+}
+
+.grid .cell.over {
+  outline: 2px dashed #2ecc71;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#message {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 30px;
+  color: #f44336;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
