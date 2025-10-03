@@ -58,7 +58,8 @@ export default function Experience({ experience, setExperience }) {
                 }
               ></textarea>
             </div>
-            <div>
+            <div className="date">
+              <div>
               <label htmlFor="start-date">Start Date Of Work</label>
               <input
                 type="date"
@@ -81,6 +82,7 @@ export default function Experience({ experience, setExperience }) {
                   setExperience({ ...experience, endDate: e.target.value })
                 }
               />
+            </div>
             </div>
             <button>Submit</button>
           </form>
