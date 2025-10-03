@@ -40,29 +40,31 @@ export default function Education({ education, setEducation }) {
                 }
               />
             </div>
-            <div>
-              <label htmlFor="start-date">Start Date Of Study</label>
-              <input
-                type="date"
-                name="start-date"
-                id="start-date"
-                value={education.startDate}
-                onChange={(e) =>
-                  setEducation({ ...education, startDate: e.target.value })
-                }
-              />
-            </div>
-            <div>
-              <label htmlFor="end-date">End Date Of Study</label>
-              <input
-                type="date"
-                name="end-date"
-                id="end-date"
-                value={education.endDate}
-                onChange={(e) =>
-                  setEducation({ ...education, endDate: e.target.value })
-                }
-              />
+            <div className="date">
+              <div>
+                <label htmlFor="start-date">Start Date Of Study</label>
+                <input
+                  type="date"
+                  name="start-date"
+                  id="start-date"
+                  value={education.startDate}
+                  onChange={(e) =>
+                    setEducation({ ...education, startDate: e.target.value })
+                  }
+                />
+              </div>
+              <div>
+                <label htmlFor="end-date">End Date Of Study</label>
+                <input
+                  type="date"
+                  name="end-date"
+                  id="end-date"
+                  value={education.endDate}
+                  onChange={(e) =>
+                    setEducation({ ...education, endDate: e.target.value })
+                  }
+                />
+              </div>
             </div>
             <button>Submit</button>
           </form>
