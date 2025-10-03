@@ -3,8 +3,9 @@ export default function Preview({ general, education, experience }) {
     <>
       <div className="preview">
         <div className="general-info">
-          <h3>{general.name}</h3>
-          <span>{general.email}</span> | <span>{general.phone}</span>
+          <h3>{general.name || "Your Name"}</h3>
+          <span>{general.email || "john@example.com"}</span> |{" "}
+          <span>{general.phone || "(+200)555-333-222"}</span>
         </div>
         <h4>Educational Experience</h4>
         <h3>{education.schoolName || "Unknown University"}</h3>
