@@ -82,6 +82,13 @@
 .main-content .section-content form div textarea:focus {
   border-color: var(--button-color);
 }
+.main-content .section-content form .date {
+  display: flex;
+  gab: 15px;
+}
+.main-content .section-content form .date div {
+  flex: 1;
+}
 .main-content .section-content form button,
 .display-section button,
 .preview > button {
