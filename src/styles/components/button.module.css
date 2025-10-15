@@ -1,0 +1,19 @@
+.btn {
+  display: block;
+  width: fit-content;
+  background-color: var(--primary-btn-color);
+  color: #dadada;
+  margin: 20px auto 0;
+  padding: 15px 40px;
+  border-radius: 5px;
+  border: 3px solid transparent;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--primary-transition);
+}
+.btn:hover {
+  background-color: transparent;
+  border-color: var(--primary-btn-color);
+  color: var(--primary-btn-color);
+}

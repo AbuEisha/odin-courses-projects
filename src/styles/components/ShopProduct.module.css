@@ -1,0 +1,66 @@
+.product {
+  background: var(--seconary-background-color);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 3px 3px 6px var(--primary-shadow-color),
+    -3px -3px 6px var(--primary-shadow-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+}
+
+.product h3 {
+  font-size: 17px;
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+.rating span {
+  margin-right: 8px;
+}
+
+.price {
+  margin: 15px 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--price-color);
+}
+
+.quntity {
+  display: flex;
+}
+.quntity button {
+  width: 50px;
+  font-size: 30px;
+  background: var(--primary-color);
+  border: none;
+  color: var(--seconary-color);
+  cursor: pointer;
+}
+.quntity button:first-of-type {
+  border-radius: 6px 0 0 6px;
+}
+.quntity button:last-of-type {
+  border-radius: 0 6px 6px 0;
+}
+.quntity input {
+  width: 100%;
+  flex: 1;
+  padding: 10px;
+  background: var(--background-color);
+  color: var(--seconary-color);
+  text-align: center;
+  font-size: 19px;
+  border: none;
+  outline: none;
+}
+.btn {
+  width: 100%;
+  padding: 15px;
+}
