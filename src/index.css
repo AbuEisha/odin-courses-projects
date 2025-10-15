@@ -1,0 +1,70 @@
+:root {
+  --primary-color: #333;
+  --seconary-color: #dadada;
+  --background-color: #121212;
+  --seconary-background-color: #212121;
+  --price-color: #4caf50;
+  --primary-btn-color: #009688;
+  --primary-shadow-color: rgb(170 170 170 / 30%);
+  --primary-transition: 0.3s;
+}
+
+.light-mode {
+  --primary-color: #dadada;
+  --seconary-color: #121212;
+  --background-color: #b4b4b4;
+  --seconary-background-color: #9c9c9c;
+  --price-color: #411313;
+  --primary-shadow-color: rgb(72 72 72 / 30%);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: var(--primary-color);
+  color: var(--seconary-color);
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 940px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1160px;
+  }
+}
