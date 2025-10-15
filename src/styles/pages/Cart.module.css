@@ -1,0 +1,49 @@
+.cart-page {
+  padding: 50px 0;
+  min-height: calc(100vh - 186px);
+}
+.cart-page h2 {
+  font-size: 40px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.empty {
+  text-align: center;
+}
+.empty svg {
+  width: 120px;
+  fill: var(--seconary-color);
+}
+.empty p {
+  font-size: 25px;
+  font-weight: 600;
+}
+.delete {
+  padding: 10px 25px;
+  background-color: #e91e63;
+  margin: 0 0 0 auto;
+}
+.delete:hover {
+  background-color: transparent;
+  color: #e91e63;
+  border-color: #e91e63;
+}
+.total-prices {
+  background: var(--seconary-background-color);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 3px 3px 6px var(--primary-shadow-color),
+    -3px -3px 6px var(--primary-shadow-color);
+  margin-top: 30px;
+}
+
+.total-prices div {
+  font-size: 30px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+.total-prices div span {
+  font-weight: 600;
+  color: var(--price-color);
+}
