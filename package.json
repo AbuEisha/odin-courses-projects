@@ -1,24 +1,23 @@
 {
-  "name": "odin-homepage",
+  "name": "homepage",
   "version": "1.0.0",
-  "description": "",
+  "description": "Homepage Project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode=production",
     "dev": "webpack serve --mode=development"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AbuEisha/odin-homepage.git"
+    "url": "https://github.com/AbuEisha/odin-courses-projects.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["homepage", "webpack"],
+  "author": "AbuEisha",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AbuEisha/odin-homepage/issues"
+    "url": "https://github.com/AbuEisha/odin-courses-projects/issues"
   },
-  "homepage": "https://github.com/AbuEisha/odin-homepage#readme",
+  "homepage": "https://github.com/AbuEisha/odin-courses-projects/tree/homepage#readme",
   "devDependencies": {
     "css-loader": "^7.1.2",
     "html-loader": "^5.1.0",
