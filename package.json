@@ -1,0 +1,7 @@
+{
+  "name": "odin-courses-projects",
+  "private": true,
+  "scripts": {
+    "build": "echo 'No build needed at root'"
+  }
+}
