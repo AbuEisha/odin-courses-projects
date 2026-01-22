@@ -1,24 +1,23 @@
 {
-  "name": "odin-todo-list",
+  "name": "todo-list",
   "version": "1.0.0",
-  "description": "",
+  "description": "Todo List Project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode=production",
     "dev": "webpack serve --mode=development"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AbuEisha/odin-todo-list.git"
+    "url": "https://github.com/AbuEisha/odin-courses-projects.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["todo", "webpack"],
+  "author": "AbuEisha",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AbuEisha/odin-todo-list/issues"
+    "url": "https://github.com/AbuEisha/odin-courses-projects/issues"
   },
-  "homepage": "https://github.com/AbuEisha/odin-todo-list#readme",
+  "homepage": "https://github.com/AbuEisha/odin-courses-projects/tree/todo-list#readme",
   "devDependencies": {
     "css-loader": "^7.1.2",
     "date-fns": "^4.1.0",
