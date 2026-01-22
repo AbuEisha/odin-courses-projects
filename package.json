@@ -1,24 +1,23 @@
 {
-  "name": "odin-restaurant-page",
+  "name": "restaurant-page",
   "version": "1.0.0",
-  "description": "",
+  "description": "Restaurant Page Project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode=production",
     "dev": "webpack serve --mode=development"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AbuEisha/odin-restaurant-page.git"
+    "url": "https://github.com/AbuEisha/odin-courses-projects.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["restaurant", "webpack"],
+  "author": "AbuEisha",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AbuEisha/odin-restaurant-page/issues"
+    "url": "https://github.com/AbuEisha/odin-courses-projects/issues"
   },
-  "homepage": "https://github.com/AbuEisha/odin-restaurant-page#readme",
+  "homepage": "https://github.com/AbuEisha/odin-courses-projects/tree/restaurant-page#readme",
   "devDependencies": {
     "css-loader": "^7.1.2",
     "html-webpack-plugin": "^5.6.3",
