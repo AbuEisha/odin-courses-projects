@@ -1,7 +1,7 @@
 {
-  "name": "odin-battleship",
+  "name": "battleship-game",
   "version": "1.0.0",
-  "description": "",
+  "description": "Battleship Game Project",
   "main": "index.js",
   "scripts": {
     "test": "jest",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AbuEisha/odin-battleship.git"
+    "url": "https://github.com/AbuEisha/odin-courses-projects.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["battleship", "game", "webpack"],
+  "author": "AbuEisha",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AbuEisha/odin-battleship/issues"
+    "url": "https://github.com/AbuEisha/odin-courses-projects/issues"
   },
-  "homepage": "https://github.com/AbuEisha/odin-battleship#readme",
+  "homepage": "https://github.com/AbuEisha/odin-courses-projects/tree/battleship-game#readme",
   "devDependencies": {
     "@babel/core": "^7.28.4",
     "@babel/preset-env": "^7.28.3",
